@@ -57,3 +57,5 @@ group :development, :test do
 end
 
 gem 'active-fedora', '9.9.1'
+
+gem 'google-search'
