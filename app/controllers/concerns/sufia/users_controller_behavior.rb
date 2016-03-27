@@ -36,6 +36,7 @@ module Sufia::UsersControllerBehavior
     @trophies = @user.trophy_files
     @followers = @user.followers
     @following = @user.all_following
+    @google_results = Google::Search::Web.new(query: "#{@user.linkedin_handle} site:linkedin.com") if @user.linkedin_handle.present?
   end
 
   # Display form for users to edit their profile information

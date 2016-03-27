@@ -177,6 +177,8 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
+    google-search (1.0.3)
+      json
     google_drive (1.0.6)
       google-api-client (>= 0.7.0, < 0.9)
       nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
@@ -613,6 +615,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-guests (~> 0.3)
+  google-search
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails

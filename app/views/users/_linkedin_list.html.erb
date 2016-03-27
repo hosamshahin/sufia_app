@@ -8,20 +8,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Title1</td>
-      <td>URL1</td>
-      <td>Description1</td>
-    </tr>
-    <tr>
-      <td>Title2</td>
-      <td>URL2</td>
-      <td>Description2</td>
-    </tr>
-    <tr>
-      <td>Title2</td>
-      <td>URL2</td>
-      <td>Description2</td>
-    </tr>
+    <% google_results.first(5).each do |result| %>
+    <% next if result.title.blank? or result.uri.blank? or result.content.blank? %>
+      <tr>
+        <td><%= result.title %></td>
+        <td><%= link_to result.uri, result.uri, target: "_blank" %></td>
+        <td><%= simple_format result.content %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
