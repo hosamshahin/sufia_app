@@ -2,12 +2,16 @@
         <li class="active"><a href="#contributions"><i class="glyphicon glyphicon-star"></i> <%= I18n.t('sufia.user_profile.tab_highlighted') %></a></li>
         <li><a href="#profile"><i class="glyphicon glyphicon-info-sign"></i> <%= I18n.t('sufia.user_profile.tab_profile') %></a></li>
         <li><a href="#activity_log" ><i class="glyphicon glyphicon-calendar"></i> <%= I18n.t('sufia.user_profile.tab_activity') %></a></li>
-        <li><a href="#linkedin" ><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+        <% if @user.linkedin_handle.present? %>
+          <li><a href="#linkedin" ><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+        <% end %>
       </ul>
 
       <div class="tab-content">
         <%= render 'contributions' %>
         <%= render 'profile' %>
         <%= render 'activity' %>
-        <%= render 'linkedin' %>
+        <% if @user.linkedin_handle.present? %>
+          <%= render 'linkedin' %>
+        <% end %>
       </div> <!-- /tab-content -->
