@@ -1,3 +1,7 @@
         <div class="tab-pane" id="linkedin">
-          <%= render partial: 'users/linkedin_list', locals: {google_results: @google_results} %>
+          <% if @google_results.any? %>
+          	<%= render partial: 'users/linkedin_list', locals: {google_results: @google_results} %>
+          <% else %>
+		<h2>No results found for <%= @user.linkedin_handle%></h2>
+          <% end %>
         </div>
